@@ -1,11 +1,13 @@
 <?php
 
 require 'vendor/autoload.php';
+
 \Stripe\Stripe::setApiKey('sk_test_51IXLVDGd7aaYQi1p5pAlrycqc8OR8T7J0zGHzEY5pDS5N4vC0PtChdZzvryUATE6rHIkhMKxJhiqmLCTifjvMqgV00FGdJu71g');
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost:4242';
+$YOUR_DOMAIN = 'http://localhost/checkout_pay';
+
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
